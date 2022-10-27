@@ -45,12 +45,25 @@ const Header = (props) => {
         onChange={handleSearch}
         value={props.pesquisa}
       />
-      <select>
-        <option value="">Ordenar</option>
-        <option value="">Crescente</option>
-        <option value="">Decrescente</option>
+      <select
+      value={props.sortingParameter}
+      onChange={(e) => props.setSortingParameter(e.target.value)}
+      >
+        <option value={"name"}>Nome</option>
+        <option value={"id"}>ID</option>
+        <option value={"type"}>Tipo</option>
       </select>
       <select
+      value={props.order}
+      onChange={(e) => props.setOrder(e.target.value)}
+      >
+        <option value="">Ordenar</option>
+        <option value="asc">Crescente</option>
+        <option value="desc">Decrescente</option>
+      </select>
+      <select
+        value={props.selectType}
+        onChange={(e) => props.setSelectType(e.target.value)}
         name="tipo"
         id="tipo"
           >
